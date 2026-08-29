@@ -1,0 +1,278 @@
+/* =========================================================
+   S & I DENTAL CLINIC — COMPONENTS
+   components.css → buttons, section utilities, cards, dividers
+   ========================================================= */
+
+/* ---------- Section utilities ---------- */
+.section {
+  padding-block: var(--space-2xl);
+  position: relative;
+}
+
+.section-sm { padding-block: var(--space-xl); }
+.section-lg { padding-block: var(--space-3xl); }
+
+.section-cream   { background-color: var(--color-cream); }
+.section-light   { background-color: var(--color-warm-white); }
+.section-white   { background-color: var(--color-white); }
+.section-sage    { background-color: var(--color-soft-sage); }
+
+.section-forest {
+  background-color: var(--color-forest);
+  color: var(--color-cream);
+}
+.section-forest h1,
+.section-forest h2,
+.section-forest h3,
+.section-forest h4 { color: var(--color-warm-white); }
+.section-forest p  { color: rgba(247, 243, 234, 0.78); }
+
+.section-header {
+  max-width: 720px;
+  margin-bottom: var(--space-xl);
+}
+
+.section-header.center {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.section-header h2 {
+  margin-top: 0.75rem;
+}
+
+.section-header .lede {
+  margin-top: var(--space-sm);
+}
+
+.section-foot {
+  margin-top: var(--space-xl);
+  display: flex;
+  justify-content: center;
+}
+
+/* ---------- Buttons ---------- */
+.btn-si {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55em;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  padding: 0.95rem 1.9rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  white-space: nowrap;
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast),
+              border-color var(--transition-fast),
+              transform var(--transition-fast),
+              box-shadow var(--transition-fast);
+}
+
+.btn-si:hover { transform: translateY(-2px); }
+.btn-si:active { transform: translateY(0); }
+
+.btn-si svg {
+  width: 1.05em;
+  height: 1.05em;
+  flex-shrink: 0;
+}
+
+.btn-si-primary {
+  background-color: var(--color-forest);
+  color: var(--color-warm-white);
+  box-shadow: var(--shadow-md);
+}
+.btn-si-primary:hover {
+  background-color: var(--color-deep-green);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn-si-gold {
+  background-color: var(--color-gold);
+  color: var(--color-forest);
+  box-shadow: var(--shadow-gold);
+}
+.btn-si-gold:hover {
+  background-color: var(--color-soft-gold);
+}
+
+.btn-si-outline {
+  background-color: transparent;
+  border-color: rgba(var(--rgb-forest), 0.35);
+  color: var(--color-forest);
+}
+.btn-si-outline:hover {
+  border-color: var(--color-forest);
+  background-color: rgba(var(--rgb-forest), 0.06);
+}
+
+/* Outline variant for use on dark/forest backgrounds */
+.section-forest .btn-si-outline {
+  border-color: rgba(247, 243, 234, 0.4);
+  color: var(--color-warm-white);
+}
+.section-forest .btn-si-outline:hover {
+  border-color: var(--color-warm-white);
+  background-color: rgba(247, 243, 234, 0.08);
+}
+
+.btn-si-light {
+  background-color: var(--color-warm-white);
+  color: var(--color-forest);
+  box-shadow: var(--shadow-md);
+}
+.btn-si-light:hover {
+  background-color: var(--color-white);
+}
+
+.btn-si-sm {
+  padding: 0.6rem 1.3rem;
+  font-size: 0.85rem;
+}
+
+.btn-si-lg {
+  padding: 1.15rem 2.4rem;
+  font-size: 1rem;
+}
+
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: center;
+}
+
+/* ---------- Signature divider motif ----------
+   A restrained line-art "tooth + leaf" mark used as a
+   section transition. Echoes the logo's tooth silhouette
+   and the clinic's sage/earthy palette. Used sparingly. */
+.si-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  color: var(--color-gold);
+  opacity: 0.85;
+  margin-block: var(--space-lg);
+}
+
+.si-divider .line {
+  height: 1px;
+  width: 64px;
+  background: linear-gradient(90deg, transparent, currentColor);
+}
+.si-divider .line.right {
+  background: linear-gradient(90deg, currentColor, transparent);
+}
+
+.si-divider svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* ---------- Scroll reveal ----------
+   Content is visible by default; the opacity/transform hide
+   only applies once JS confirms it can reveal it (adds
+   .js-reveal to <html>), so the page is fully readable even
+   if JavaScript fails to load. */
+html.js-reveal [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+html.js-reveal [data-reveal="fade"] {
+  transform: none;
+}
+[data-reveal].is-visible,
+html.js-reveal [data-reveal].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js-reveal [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- Cards ---------- */
+.card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+/* ---------- Pill / badge ---------- */
+.si-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill);
+  background-color: rgba(var(--rgb-gold), 0.12);
+  color: var(--color-gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ---------- Icon badge (used in Why Choose Us, Services) ---------- */
+.icon-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background-color: rgba(var(--rgb-forest), 0.06);
+  color: var(--color-forest);
+  flex-shrink: 0;
+}
+.icon-badge svg {
+  width: 26px;
+  height: 26px;
+  stroke: currentColor;
+}
+
+.section-forest .icon-badge {
+  background-color: rgba(247, 243, 234, 0.08);
+  color: var(--color-soft-gold);
+}
+
+/* ---------- Links with arrow ---------- */
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-weight: 600;
+  color: var(--color-forest);
+  border-bottom: 1px solid rgba(var(--rgb-forest), 0.25);
+  padding-bottom: 0.15em;
+  transition: gap var(--transition-fast), border-color var(--transition-fast), color var(--transition-fast);
+}
+.link-arrow:hover {
+  gap: 0.75em;
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+.link-arrow svg {
+  width: 1.1em;
+  height: 1.1em;
+}
+
+.section-forest .link-arrow {
+  color: var(--color-warm-white);
+  border-color: rgba(247, 243, 234, 0.3);
+}
+.section-forest .link-arrow:hover {
+  color: var(--color-soft-gold);
+  border-color: var(--color-soft-gold);
+}

@@ -1,0 +1,1497 @@
+/* =========================================================
+   S & I DENTAL CLINIC — HERO
+   hero.css
+   ========================================================= */
+
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.si-hero {
+  position: relative;
+
+  padding-top: calc(var(--header-height) + 3.5rem);
+  padding-bottom: 6rem;
+
+  background-color: var(--color-cream);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   DECORATIVE WATERMARK
+   ========================================================= */
+
+.si-hero__watermark {
+  position: absolute;
+
+  top: -8%;
+  left: -12%;
+
+  width: 640px;
+  height: 640px;
+
+  color: var(--color-sage);
+
+  opacity: 0.16;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+
+/* =========================================================
+   MAIN GRID
+   ========================================================= */
+
+.si-hero .container {
+  position: relative;
+
+  z-index: 1;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.02fr) minmax(420px, 0.98fr);
+
+  gap: clamp(3rem, 6vw, 6.5rem);
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.si-hero__content {
+  max-width: 700px;
+}
+
+
+/* Eyebrow */
+
+.si-hero__content .eyebrow {
+  display: inline-block;
+
+  margin-bottom: 0.9rem;
+}
+
+
+/* =========================================================
+   HEADLINE
+   ========================================================= */
+
+.si-hero__content h1 {
+  max-width: none;
+
+  margin: 0;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.035em;
+}
+
+
+/*
+   IMPORTANT:
+   The headline is intentionally split into
+   two visual lines.
+*/
+
+.si-hero__headline-line {
+  display: block;
+}
+
+.si-hero__headline-line:first-child {
+  color: var(--color-forest);
+}
+
+.si-hero__headline-line:last-child {
+  color: rgba(33, 33, 33, 0.79);
+}
+
+
+/* =========================================================
+   TAGLINE
+   ========================================================= */
+
+.si-hero__tagline {
+  margin-top: 1.15rem;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(1.2rem, 1.7vw, 1.4rem);
+
+  font-style: italic;
+
+  color: var(--color-gold);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.si-hero__content p.lede {
+  max-width: 49ch;
+
+  margin-top: 1rem;
+
+  color: var(--color-charcoal);
+
+  opacity: 0.78;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   HERO BUTTONS
+   ========================================================= */
+
+.si-hero__buttons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  margin-top: 1.75rem;
+}
+
+
+/* Base button */
+
+.si-hero__btn {
+  position: relative;
+
+  min-height: 52px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.65rem;
+
+  padding: 0.7rem 1.05rem;
+
+  border: 1px solid transparent;
+
+  border-radius: 14px;
+
+  font-family: var(--font-body);
+
+  font-size: 0.9rem;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+
+/* Button icon */
+
+.si-hero__btn-icon {
+  width: 31px;
+  height: 31px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background-color: rgba(255, 255, 255, 0.13);
+}
+
+.si-hero__btn-icon svg {
+  width: 17px;
+  height: 17px;
+}
+
+
+/* Arrow */
+
+.si-hero__btn-arrow {
+  width: 16px;
+  height: 16px;
+
+  margin-left: 0.15rem;
+
+  transition:
+    transform var(--transition-fast);
+}
+
+.si-hero__btn:hover .si-hero__btn-arrow {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   PRIMARY BUTTON
+   ========================================================= */
+
+.si-hero__btn--primary {
+  color: var(--color-warm-white);
+
+  background-color: var(--color-forest);
+
+  box-shadow:
+    0 8px 22px rgba(var(--rgb-forest), 0.18);
+}
+
+.si-hero__btn--primary:hover {
+  color: var(--color-warm-white);
+
+  background-color: #123e2e;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 28px rgba(var(--rgb-forest), 0.23);
+}
+
+
+/* =========================================================
+   GOOGLE BUTTON
+   ========================================================= */
+
+.si-hero__btn--google {
+  color: var(--color-charcoal);
+
+  background-color: var(--color-white);
+
+  border-color: rgba(var(--rgb-forest), 0.14);
+
+  box-shadow:
+    0 6px 18px rgba(var(--rgb-forest), 0.07);
+}
+
+.si-hero__btn--google:hover {
+  color: var(--color-forest);
+
+  border-color: rgba(var(--rgb-forest), 0.25);
+
+  background-color: var(--color-white);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 24px rgba(var(--rgb-forest), 0.11);
+}
+
+
+/* Real Google G */
+
+.si-hero__google-icon {
+  width: 25px;
+  height: 25px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.si-hero__google-icon svg {
+  width: 24px;
+  height: 24px;
+
+  display: block;
+}
+
+
+/* =========================================================
+   OUTLINE BUTTON
+   ========================================================= */
+
+.si-hero__btn--outline {
+  color: var(--color-forest);
+
+  background-color: transparent;
+
+  border-color: rgba(var(--rgb-forest), 0.20);
+}
+
+.si-hero__btn--outline:hover {
+  color: var(--color-forest);
+
+  background-color: rgba(var(--rgb-forest), 0.055);
+
+  border-color: rgba(var(--rgb-forest), 0.34);
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TRUST ROW
+   ========================================================= */
+
+.si-hero__trust {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 1rem 1.4rem;
+
+  margin-top: 1.65rem;
+
+  padding-top: 1.15rem;
+
+  border-top: 1px solid rgba(var(--rgb-forest), 0.12);
+}
+
+
+.si-hero__trust-item {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.5rem;
+
+  font-size: 0.82rem;
+
+  font-weight: 600;
+
+  color: var(--color-forest);
+
+  white-space: nowrap;
+}
+
+
+.si-hero__trust-item svg {
+  width: 19px;
+  height: 19px;
+
+  color: var(--color-gold);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   HERO VISUAL
+   ========================================================= */
+
+.si-hero__visual {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 620px;
+
+  justify-self: end;
+}
+
+
+/* =========================================================
+   SQUARE SLIDER
+   ========================================================= */
+
+.si-hero__slider {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  border-radius: 28px;
+
+  background-color: var(--color-sage);
+
+  box-shadow:
+    0 22px 55px rgba(var(--rgb-forest), 0.16);
+}
+
+
+/* Individual slides */
+
+.si-hero__slide {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform: scale(1.025);
+
+  transition:
+    opacity 0.9s ease,
+    transform 3s ease,
+    visibility 0.9s ease;
+}
+
+.si-hero__slide.is-active {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform: scale(1);
+}
+
+
+/* Images */
+
+.si-hero__slide img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+   ========================================================= */
+
+.si-hero__slider-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(23, 60, 46, 0) 52%,
+      rgba(23, 60, 46, 0.62) 100%
+    );
+}
+
+
+/* =========================================================
+   IMAGE CAPTION
+   ========================================================= */
+
+.si-hero__caption {
+  position: absolute;
+
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.35rem;
+
+  z-index: 3;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 1rem;
+
+  color: var(--color-warm-white);
+}
+
+
+.si-hero__caption strong {
+  display: block;
+
+  font-family: var(--font-display);
+
+  font-size: 1.2rem;
+
+  line-height: 1.2;
+}
+
+
+.si-hero__caption span {
+  display: block;
+
+  margin-top: 0.25rem;
+
+  font-size: 0.8rem;
+
+  opacity: 0.86;
+}
+
+
+/* =========================================================
+   SLIDER DOTS
+   ========================================================= */
+
+.si-hero__dots {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  padding-bottom: 0.1rem;
+}
+
+
+.si-hero__dots span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background-color: rgba(255, 255, 255, 0.45);
+
+  transition:
+    width var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+
+.si-hero__dots span.is-active {
+  width: 20px;
+
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-warm-white);
+}
+
+
+/* =========================================================
+   FLOATING HOURS CARD
+   ========================================================= */
+
+.si-hero__accent {
+  position: absolute;
+
+  left: -2rem;
+
+  bottom: -1.65rem;
+
+  z-index: 5;
+
+  min-width: 245px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.85rem;
+
+  padding: 0.95rem 1.05rem;
+
+  background-color: var(--color-white);
+
+  border: 1px solid rgba(var(--rgb-forest), 0.08);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 24px 50px rgba(var(--rgb-forest), 0.18),
+    0 10px 24px rgba(var(--rgb-forest), 0.12),
+    0 3px 8px rgba(0, 0, 0, 0.06);
+
+  animation: siHeroFloat 4.2s ease-in-out infinite;
+
+  transition:
+    box-shadow var(--transition-base),
+    transform var(--transition-base);
+}
+
+
+/* Continuous floating animation */
+
+@keyframes siHeroFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+
+/* Icon badge */
+
+.si-hero__accent-icon {
+  width: 46px;
+  height: 46px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 14px;
+
+  color: var(--color-gold);
+
+  background-color: rgba(var(--rgb-gold), 0.13);
+
+  border: 1px solid rgba(var(--rgb-gold), 0.12);
+}
+
+
+.si-hero__accent-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+
+/* Card text */
+
+.si-hero__accent-content {
+  min-width: 0;
+}
+
+
+.si-hero__accent-content strong {
+  display: block;
+
+  font-family: var(--font-display);
+
+  font-size: 1.05rem;
+
+  line-height: 1.2;
+
+  color: var(--color-forest);
+}
+
+
+.si-hero__accent-content span {
+  display: block;
+
+  margin-top: 0.2rem;
+
+  font-size: 0.77rem;
+
+  color: var(--color-muted);
+}
+
+
+/* Open indicator */
+
+.si-hero__accent-status {
+  display: inline-flex !important;
+
+  align-items: center;
+
+  gap: 0.3rem;
+
+  margin-left: auto;
+
+  align-self: flex-start;
+
+  padding: 0.28rem 0.5rem;
+
+  border-radius: var(--radius-pill);
+
+  background-color: rgba(44, 132, 77, 0.08);
+
+  color: #367747 !important;
+
+  font-size: 0.68rem !important;
+
+  font-weight: 700;
+}
+
+
+.si-hero__accent-status span {
+  width: 6px;
+  height: 6px;
+
+  margin: 0;
+
+  border-radius: 50%;
+
+  background-color: #3f9a55;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1200px) {
+
+  .si-hero .container {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(400px, 0.9fr);
+
+    gap: 3.5rem;
+  }
+
+  .si-hero__watermark {
+    width: 500px;
+    height: 500px;
+  }
+
+  .si-hero__accent {
+    left: -1.25rem;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+  .si-hero {
+    padding-top: calc(var(--header-height) + 2.75rem);
+
+    padding-bottom: 5rem;
+  }
+
+
+  .si-hero .container {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+
+  /*
+     Image remains above the content on tablet/mobile.
+  */
+
+  .si-hero__visual {
+    order: -1;
+
+    max-width: 650px;
+
+    width: 100%;
+
+    justify-self: center;
+  }
+
+
+  .si-hero__slider {
+    border-radius: 24px;
+  }
+
+
+  .si-hero__content {
+    max-width: 720px;
+  }
+
+
+  .si-hero__accent {
+    left: 1rem;
+
+    bottom: -1.35rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+  .si-hero {
+    padding-top: calc(var(--header-height) - 0.6rem);
+
+    padding-bottom: 1rem;
+  }
+
+
+  /* -----------------------------------------
+     Main layout
+     ----------------------------------------- */
+
+  .si-hero .container {
+    gap: 1.5rem;
+  }
+
+
+  /* -----------------------------------------
+     Decorative watermark
+     ----------------------------------------- */
+
+  .si-hero__watermark {
+    width: 300px;
+    height: 300px;
+
+    top: 2%;
+    left: -32%;
+
+    opacity: 0.11;
+  }
+
+
+  /* -----------------------------------------
+     FULL-WIDTH MOBILE IMAGE
+     ----------------------------------------- */
+
+  .si-hero__visual {
+    order: -1;
+
+    width: 100vw;
+
+    max-width: none;
+
+    justify-self: stretch;
+
+    margin-left: calc((100% - 100vw) / 2);
+
+    margin-right: 0;
+  }
+
+
+.si-hero__slider {
+  width: 100%;
+
+  height: auto;
+
+  aspect-ratio: 16 / 9;
+
+  border-radius: 0;
+
+  box-shadow:
+    0 14px 32px rgba(var(--rgb-forest), 0.14);
+}
+
+
+  .si-hero__slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+  }
+
+
+  /* -----------------------------------------
+     IMAGE CAPTION
+     ----------------------------------------- */
+
+  .si-hero__caption {
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 0.8rem;
+
+    gap: 0.5rem;
+  }
+
+
+  .si-hero__caption strong {
+    font-size: 0.9rem;
+  }
+
+
+  .si-hero__caption span {
+    margin-top: 0.12rem;
+
+    font-size: 0.68rem;
+  }
+
+
+  /* -----------------------------------------
+     SLIDER DOTS
+     ----------------------------------------- */
+
+  .si-hero__dots {
+    gap: 0.3rem;
+  }
+
+
+  .si-hero__dots span {
+    width: 6px;
+    height: 6px;
+  }
+
+
+  .si-hero__dots span.is-active {
+    width: 17px;
+  }
+
+
+  /* -----------------------------------------
+     SMALL FLOATING HOURS CARD
+     UPPER LEFT OF IMAGE
+     ----------------------------------------- */
+
+  .si-hero__accent {
+    position: absolute;
+
+    left: 0.6rem;
+
+    top: 0.55rem;
+
+    bottom: auto;
+
+    z-index: 5;
+
+    width: auto;
+
+    min-width: 0;
+
+    max-width: calc(100vw - 1.2rem);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.3rem;
+
+    padding: 0.32rem 0.42rem;
+
+    border-radius: 9px;
+
+    box-shadow:
+      0 7px 18px rgba(var(--rgb-forest), 0.13),
+      0 3px 8px rgba(0, 0, 0, 0.05);
+  }
+
+
+  /* Small icon */
+
+  .si-hero__accent-icon {
+    width: 25px;
+
+    height: 25px;
+
+    border-radius: 7px;
+  }
+
+
+  .si-hero__accent-icon svg {
+    width: 13px;
+
+    height: 13px;
+  }
+
+
+  /* Small text */
+
+  .si-hero__accent-content strong {
+    font-size: 0.62rem;
+
+    line-height: 1.05;
+  }
+
+
+  .si-hero__accent-content span {
+    margin-top: 0.04rem;
+
+    font-size: 0.5rem;
+
+    line-height: 1.05;
+  }
+
+
+  /* -----------------------------------------
+     SMALL OPEN / CLOSED INDICATOR
+     ----------------------------------------- */
+
+  .si-hero__accent-status {
+    display: inline-flex !important;
+
+    align-items: center;
+
+    gap: 0.16rem;
+
+    margin-left: 0.05rem;
+
+    padding: 0.13rem 0.22rem;
+
+    flex-shrink: 0;
+
+    border-radius: var(--radius-pill);
+
+    font-size: 0.46rem !important;
+
+    line-height: 1;
+  }
+
+
+  .si-hero__accent-status span {
+    width: 4px;
+
+    height: 4px;
+
+    margin: 0;
+
+    flex-shrink: 0;
+  }
+
+
+  /* -----------------------------------------
+     CONTENT
+     ----------------------------------------- */
+
+  .si-hero__content {
+    max-width: none;
+
+    width: 100%;
+
+    padding-top: 0.4rem;
+
+    text-align: center;
+  }
+
+
+  /* -----------------------------------------
+     EYEBROW
+     ----------------------------------------- */
+
+  .si-hero__content .eyebrow {
+    margin-bottom: 0.55rem;
+
+    font-size: 0.72rem;
+  }
+
+
+  /* -----------------------------------------
+     HEADLINE
+     ----------------------------------------- */
+
+  .si-hero__content h1 {
+    max-width: none;
+
+    margin: 0;
+
+    line-height: 1.04;
+
+    letter-spacing: -0.025em;
+
+    text-align: center;
+  }
+
+
+  .si-hero__headline-line {
+    display: block;
+  }
+
+
+  /* -----------------------------------------
+     TAGLINE
+     ----------------------------------------- */
+
+  .si-hero__tagline {
+    margin-top: 0.65rem;
+
+    font-size: 1.08rem;
+
+    text-align: center;
+  }
+
+
+  /* -----------------------------------------
+     DESCRIPTION
+     ----------------------------------------- */
+
+  .si-hero__content p.lede {
+    max-width: none;
+
+    margin-top: 0.65rem;
+
+    font-size: 0.9rem;
+
+    line-height: 1.55;
+
+    text-align: center;
+  }
+
+
+  /* -----------------------------------------
+     BUTTONS
+     TWO BUTTONS IN ONE ROW
+     ----------------------------------------- */
+
+  .si-hero__buttons {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    width: 100%;
+
+    gap: 0.5rem;
+
+    margin-top: 1.05rem;
+  }
+
+
+.si-hero__btn {
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 48px;
+
+  padding: 0.55rem 0.45rem;
+
+  gap: 0.3rem;
+
+  border-radius: 12px;
+
+  font-size: clamp(0.68rem, 2.8vw, 0.76rem);
+
+  white-space: nowrap;
+}
+
+
+  .si-hero__btn-icon {
+    width: 27px;
+
+    height: 27px;
+
+    border-radius: 8px;
+
+    flex-shrink: 0;
+  }
+
+
+  .si-hero__btn-icon svg {
+    width: 15px;
+
+    height: 15px;
+  }
+
+
+  .si-hero__google-icon {
+    width: 22px;
+
+    height: 22px;
+
+    flex-shrink: 0;
+  }
+
+
+  .si-hero__google-icon svg {
+    width: 21px;
+
+    height: 21px;
+  }
+
+
+  .si-hero__btn-arrow {
+    width: 13px;
+
+    height: 13px;
+
+    margin-left: 0.05rem;
+
+    flex-shrink: 0;
+  }
+
+
+  /* Explore Services hidden on mobile */
+
+  .si-hero__btn--outline {
+    display: none;
+  }
+
+
+  /* -----------------------------------------
+     TRUST ROW
+     THREE ITEMS IN ONE ROW
+     ----------------------------------------- */
+
+  .si-hero__trust {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    align-items: center;
+
+    gap: 0.35rem;
+
+    width: 100%;
+
+    margin-top: 1rem;
+
+    padding-top: 0.8rem;
+
+    text-align: center;
+  }
+
+
+  .si-hero__trust-item {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.28rem;
+
+    font-size: 0.64rem;
+
+    line-height: 1.15;
+
+    white-space: normal;
+
+    text-align: center;
+  }
+
+
+  .si-hero__trust-item svg {
+    width: 17px;
+
+    height: 17px;
+
+    flex-shrink: 0;
+  }
+
+
+  .si-hero__trust-item:last-child {
+    grid-column: auto;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  /* Keep image wide */
+
+  .si-hero__slider {
+    aspect-ratio: 16 / 9;
+  }
+
+
+  /* Compact caption */
+
+  .si-hero__caption {
+    display: flex;
+
+    left: 0.7rem;
+
+    right: 0.7rem;
+
+    bottom: 0.65rem;
+  }
+
+
+  .si-hero__caption strong {
+    font-size: 0.82rem;
+  }
+
+
+  .si-hero__caption span {
+    font-size: 0.63rem;
+  }
+
+
+  .si-hero__dots {
+    margin-top: 0;
+
+    gap: 0.25rem;
+  }
+
+
+  /* Even smaller hours card */
+
+  .si-hero__accent {
+    left: 0.5rem;
+
+    top: 0.5rem;
+
+    max-width: calc(100vw - 1rem);
+
+    padding: 0.28rem 0.36rem;
+
+    gap: 0.28rem;
+  }
+
+
+  .si-hero__accent-icon {
+    width: 23px;
+
+    height: 23px;
+
+    border-radius: 6px;
+  }
+
+
+  .si-hero__accent-icon svg {
+    width: 12px;
+
+    height: 12px;
+  }
+
+
+  .si-hero__accent-content strong {
+    font-size: 0.58rem;
+  }
+
+
+  .si-hero__accent-content span {
+    font-size: 0.47rem;
+  }
+
+
+  .si-hero__accent-status {
+    padding: 0.11rem 0.2rem;
+
+    font-size: 0.43rem !important;
+  }
+
+
+  .si-hero__accent-status span {
+    width: 3px;
+
+    height: 3px;
+  }
+
+
+  /* Buttons stay on one row */
+
+  .si-hero__buttons {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 0.4rem;
+  }
+
+
+.si-hero__btn {
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 46px;
+
+  padding-left: 0.3rem;
+
+  padding-right: 0.3rem;
+
+  gap: 0.25rem;
+
+  font-size: 0.68rem;
+
+  white-space: nowrap;
+}
+
+
+  .si-hero__btn-arrow {
+    width: 12px;
+
+    height: 12px;
+  }
+
+
+  /* Trust items stay on one row */
+
+  .si-hero__trust {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 0.2rem;
+  }
+
+
+  .si-hero__trust-item {
+    font-size: 0.58rem;
+
+    gap: 0.22rem;
+  }
+
+
+  .si-hero__trust-item svg {
+    width: 15px;
+
+    height: 15px;
+  }
+
+}
+
+/* =========================================================
+   DESKTOP HERO — COMPACT ABOVE-THE-FOLD VERSION
+   ========================================================= */
+
+@media (min-width: 992px) {
+
+  .si-hero {
+    padding-top: calc(var(--header-height) + 1.25rem);
+    padding-bottom: 2.25rem;
+  }
+
+
+  /* -----------------------------------------
+     SMALLER DESKTOP SLIDER
+     ----------------------------------------- */
+
+  .si-hero__visual {
+    width: 100%;
+
+    max-width: 440px;
+
+    justify-self: end;
+  }
+
+
+  .si-hero__slider {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+  }
+
+
+  /* -----------------------------------------
+     REMOVE EXPLORE SERVICES
+     ----------------------------------------- */
+
+  .si-hero__btn--outline {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .si-hero__accent {
+    animation: none;
+  }
+
+  .si-hero__slide {
+    transition: none;
+  }
+
+  .si-hero__btn,
+  .si-hero__btn-arrow,
+  .si-hero__dots span {
+    transition: none;
+  }
+
+}

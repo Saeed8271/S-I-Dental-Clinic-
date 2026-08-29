@@ -1,0 +1,82 @@
+/* =========================================================
+   S & I DENTAL CLINIC — GLOBAL RESPONSIVE BEHAVIOR
+   responsive.css
+   Component-specific responsive rules live alongside their
+   component (navbar.css, hero.css, sections.css, etc).
+   This file holds cross-cutting breakpoint behavior only.
+   ========================================================= */
+
+/* Prevent any accidental horizontal scroll from full-bleed
+   decorative elements (watermarks, floating cards). */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Container breathing room scales down gracefully */
+@media (max-width: 1400px) {
+  :root {
+    --container-pad: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-pad: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --container-pad: 1rem;
+  }
+}
+
+/* Section rhythm tightens on smaller screens so the page
+   doesn't feel over-spaced on a tall, narrow viewport. */
+@media (max-width: 991px) {
+  :root {
+    --space-2xl: 4.5rem;
+    --space-3xl: 5.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  :root {
+    --space-xl: 3rem;
+    --space-2xl: 3.5rem;
+    --space-3xl: 4rem;
+  }
+
+  .btn-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-group .btn-si {
+    width: 100%;
+  }
+}
+
+/* Comfortable touch targets on touch devices */
+@media (hover: none) {
+  .btn-si,
+  .si-navbar__links a,
+  .si-footer__social a {
+    min-height: 44px;
+  }
+}
+
+/* Respect safe-area on notched devices for the floating
+   WhatsApp button */
+@media (max-width: 575px) {
+  .si-whatsapp-float {
+    right: max(var(--space-sm), env(safe-area-inset-right));
+    bottom: max(var(--space-sm), env(safe-area-inset-bottom));
+    width: 52px;
+    height: 52px;
+  }
+  .si-whatsapp-float svg {
+    width: 26px;
+    height: 26px;
+  }
+}

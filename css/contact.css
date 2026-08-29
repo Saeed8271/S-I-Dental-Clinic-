@@ -1,0 +1,365 @@
+/* =========================================================
+   S & I DENTAL CLINIC — CONTACT
+
+   contact.css → contact-specific styling
+
+   (Homepage "Location / Visit Us" section; contact.html
+   will extend this file with the full contact form later.)
+
+   ========================================================= */
+
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.si-location {
+
+  position: relative;
+
+}
+
+
+/* ---------- Main Layout ---------- */
+
+.si-location .container {
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: var(--space-2xl);
+
+  align-items: stretch;
+
+}
+
+
+/* ---------- Location Information ---------- */
+
+.si-location__info {
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+}
+
+
+/* ---------- Eyebrow ---------- */
+
+.si-location__info .eyebrow {
+
+  margin-top: 0;
+
+  font-size: 1rem;
+
+}
+
+
+/* ---------- Information Blocks ---------- */
+
+.si-location__block {
+
+  display: flex;
+
+  gap: 1rem;
+
+  margin-top: var(--space-md);
+
+}
+
+
+.si-location__block .icon-badge {
+
+  background-color: rgba(var(--rgb-gold), 0.14);
+
+  color: var(--color-gold);
+
+}
+
+
+.si-location__block h4 {
+
+  color: var(--color-warm-white);
+
+  margin-bottom: 0.3rem;
+
+}
+
+
+.si-location__block p {
+
+  margin: 0;
+
+  font-size: 0.95rem;
+
+}
+
+
+/* ---------- Buttons ---------- */
+
+.si-location .btn-group {
+
+  margin-top: var(--space-lg);
+
+}
+
+
+/* ---------- Map ---------- */
+
+.si-location__map {
+
+  position: relative;
+
+  border-radius: var(--radius-lg);
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow-lg);
+
+  min-height: 340px;
+
+  border: 1px solid rgba(247, 243, 234, 0.15);
+
+}
+
+
+.si-location__map iframe {
+
+  width: 100%;
+
+  height: 100%;
+
+  min-height: 340px;
+
+  border: 0;
+
+  display: block;
+
+  filter: grayscale(0.15) contrast(1.02);
+
+}
+
+
+/* =========================================================
+   SECTION DIVIDER
+   ========================================================= */
+
+/*
+   One single golden divider separates the complete
+   Location section from the section below it.
+*/
+
+.si-location::after {
+
+  content: "";
+
+  display: block;
+
+  width: 100%;
+
+  height: 1px;
+
+  margin-top: var(--space-2xl);
+
+  background-color: rgba(var(--rgb-gold), 0.65);
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  /* ---------- Layout ---------- */
+
+  .si-location .container {
+
+    grid-template-columns: 1fr;
+
+    gap: var(--space-lg);
+
+  }
+
+
+  /* ---------- Map ---------- */
+
+  .si-location__map {
+
+    order: -1;
+
+    min-height: 280px;
+
+  }
+
+
+  .si-location__map iframe {
+
+    min-height: 280px;
+
+  }
+
+
+  /* ---------- Eyebrow ---------- */
+
+  .si-location__info .eyebrow {
+
+    margin-top: 0;
+
+    font-size: 1rem;
+
+  }
+
+
+  /* ---------- Buttons ---------- */
+
+  .si-location .btn-group {
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 0.75rem;
+
+    width: 100%;
+
+  }
+
+
+  .si-location .btn-group .btn-si {
+
+    width: auto;
+
+    max-width: fit-content;
+
+    padding-left: 1.15rem;
+
+    padding-right: 1.15rem;
+
+  }
+
+
+  /* ---------- Section Divider ---------- */
+
+  .si-location::after {
+
+    margin-top: var(--space-lg);
+
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+  /* ---------- Location Layout ---------- */
+
+  .si-location .container {
+
+    gap: 0.75rem;
+
+  }
+
+
+  /* ---------- Map ---------- */
+
+  /*
+     Keep the map close to the content below it.
+  */
+
+  .si-location__map {
+
+    min-height: 250px;
+
+  }
+
+
+  .si-location__map iframe {
+
+    min-height: 250px;
+
+  }
+
+
+  /* ---------- Location Information ---------- */
+
+  .si-location__info {
+
+    justify-content: flex-start;
+
+  }
+
+
+  /* ---------- Eyebrow ---------- */
+
+  .si-location__info .eyebrow {
+
+    margin-top: 0;
+
+    margin-bottom: 0.5rem;
+
+    font-size: 1rem;
+
+  }
+
+
+  /* ---------- Buttons ---------- */
+
+  .si-location .btn-group {
+
+    display: flex;
+
+    flex-direction: row;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 0.6rem;
+
+    width: 100%;
+
+    margin-top: var(--space-md);
+
+  }
+
+
+  .si-location .btn-group .btn-si {
+
+    flex: 0 0 auto;
+
+    width: auto;
+
+    max-width: fit-content;
+
+    padding-left: 0.9rem;
+
+    padding-right: 0.9rem;
+
+    white-space: nowrap;
+
+  }
+
+
+  /* ---------- Section Divider ---------- */
+
+  .si-location::after {
+
+    margin-top: var(--space-md);
+
+  }
+
+}

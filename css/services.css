@@ -1,0 +1,1643 @@
+/* =========================================================
+   S & I DENTAL CLINIC — SERVICES PREVIEW
+   Redesign notes: warm clinical palette kept as-is (forest /
+   gold / cream tokens from the site design system). Signature
+   move — a soft gold "glow corner" + rising accent bar on each
+   card, echoing the light-catching feel of a polished tooth.
+   Cards stay compact (icon + name + View Details) and span the
+   full section width; the full description only appears in the
+   popup. Mobile shows 2 cards per row, both centered with large
+   squircle icon badges to match the reference design. Header is
+   centered on all breakpoints, and the heading breaks onto two
+   lines on mobile ("Dental Treatment at" / "S & I Dental
+   Clinic"). The section's own top/bottom padding (inherited
+   from the shared ".section" class) is zeroed out here so
+   there's no dead space above "Our Services" or below "View
+   All Services".
+   ========================================================= */
+
+
+/* =========================================================
+   SECTION SPACING OVERRIDE
+   The top/bottom gap here comes from the shared ".section"
+   class in sections.css, not from this file — zero it out
+   specifically for the services section so the eyebrow sits
+   right under the previous section and "View All Services"
+   sits right above the next one.
+   ========================================================= */
+
+.si-services.section {
+  padding-top: 0 !important;
+
+  padding-bottom: 0 !important;
+}
+
+
+/* =========================================================
+   SECTION HEADER
+   ========================================================= */
+
+.si-services__header {
+  position: relative;
+
+  margin-top: 4rem;
+
+  margin-bottom: 1.75rem;
+
+  text-align: center;
+}
+
+
+.si-services__header .eyebrow {
+  position: relative;
+
+  display: inline-block;
+
+  font-size: 1.25rem;
+
+  margin-bottom: 0.5rem;
+}
+
+
+.si-services__header h2 {
+  margin-bottom: 0.5rem;
+
+  letter-spacing: -0.01em;
+
+  /* Keep heading on one line on desktop */
+  white-space: nowrap;
+}
+
+
+.si-services__header h2 span {
+  position: relative;
+
+  color: rgba(33, 33, 33, 0.79);
+}
+
+
+.si-services__header .lede {
+  max-width: 46ch;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   SERVICES GRID
+   ========================================================= */
+
+.si-services__grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 1rem;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+   ========================================================= */
+
+.si-service-card {
+  position: relative;
+
+  overflow: hidden;
+
+  min-width: 0;
+
+  background-color: var(--color-white);
+
+  border: 1px solid rgba(var(--rgb-forest), 0.10);
+
+  border-radius: var(--radius-md);
+
+  padding: 1.9rem 1.4rem 1.6rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  gap: 0.75rem;
+
+  min-height: 210px;
+
+  box-shadow:
+    0 1px 2px rgba(var(--rgb-forest), 0.06),
+    0 10px 24px rgba(var(--rgb-forest), 0.06);
+
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color var(--transition-base);
+}
+
+
+/* Rising accent bar along the top edge */
+
+.si-service-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(90deg, var(--color-forest), var(--color-gold));
+
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Soft warm glow in the top-right corner — the card's signature */
+
+.si-service-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -55%;
+  right: -35%;
+
+  width: 60%;
+  height: 130%;
+
+  background: radial-gradient(closest-side, rgba(var(--rgb-gold), 0.16), transparent 70%);
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD HOVER / FOCUS
+   ========================================================= */
+
+.si-service-card:hover,
+.si-service-card:focus-within {
+  transform: translateY(-6px);
+
+  border-color: rgba(var(--rgb-gold), 0.35);
+
+  box-shadow:
+    0 1px 2px rgba(var(--rgb-forest), 0.06),
+    0 22px 40px rgba(var(--rgb-forest), 0.14);
+}
+
+
+.si-service-card:hover::before,
+.si-service-card:focus-within::before {
+  transform: scaleX(1);
+}
+
+
+.si-service-card:hover::after,
+.si-service-card:focus-within::after {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.si-service-card .icon-badge {
+  position: relative;
+
+  z-index: 1;
+
+  width: 72px;
+  height: 72px;
+
+  flex-shrink: 0;
+
+  background-color: rgba(var(--rgb-gold), 0.11);
+
+  color: var(--color-gold);
+
+  border: 1px solid rgba(var(--rgb-gold), 0.22);
+
+  border-radius: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color var(--transition-base),
+    border-color var(--transition-base);
+}
+
+
+.si-service-card:hover .icon-badge,
+.si-service-card:focus-within .icon-badge {
+  transform: translateY(-2px) rotate(-6deg);
+
+  background-color: var(--color-gold);
+
+  border-color: var(--color-gold);
+
+  color: var(--color-white);
+}
+
+
+.si-service-card .icon-badge svg {
+  width: 32px;
+  height: 32px;
+}
+
+
+/* =========================================================
+   CARD TITLE
+   ========================================================= */
+
+.si-service-card h3 {
+  position: relative;
+
+  z-index: 1;
+
+  margin: 0;
+
+  font-size: 1.3rem;
+
+  font-weight: 700;
+
+  line-height: 1.3;
+
+  color: var(--color-forest);
+}
+
+
+/* =========================================================
+   HIDE CARD DESCRIPTION
+   The full description is shown in the popup only — cards stay
+   compact: icon + treatment name + View Details.
+   ========================================================= */
+
+.si-service-card > p {
+  display: none;
+}
+
+
+/* =========================================================
+   VIEW DETAILS
+   ========================================================= */
+
+.si-service-card .link-arrow {
+  position: relative;
+
+  z-index: 1;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.45rem;
+
+  margin-top: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  font-family: var(--font-body);
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  color: var(--color-gold);
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: color var(--transition-base);
+}
+
+
+.si-service-card .link-arrow svg {
+  width: 18px;
+  height: 18px;
+
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.si-service-card .link-arrow:hover,
+.si-service-card .link-arrow:focus-visible {
+  color: var(--color-forest);
+}
+
+
+.si-service-card .link-arrow:hover svg,
+.si-service-card .link-arrow:focus-visible svg {
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   ACCESSIBLE FOCUS
+   ========================================================= */
+
+.si-service-card:focus-within {
+  outline: none;
+}
+
+
+.si-service-card .link-arrow:focus-visible {
+  outline: 2px solid var(--color-gold);
+
+  outline-offset: 3px;
+
+  border-radius: 4px;
+}
+
+
+/* =========================================================
+   SECTION FOOT
+   ========================================================= */
+
+.si-services .section-foot {
+  margin-top: 1rem;
+
+  margin-bottom: 1.75rem;
+}
+
+
+.si-services .section-foot > * {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SERVICE POPUP OVERLAY
+   ========================================================= */
+
+.si-service-modal {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 9999;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.25rem;
+
+  background: rgba(17, 35, 28, 0.66);
+
+  backdrop-filter: blur(8px);
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease;
+}
+
+
+.si-service-modal.is-open {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+
+/* =========================================================
+   POPUP
+   ========================================================= */
+
+.si-service-modal__dialog {
+  position: relative;
+
+  width: min(620px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background-color: var(--color-cream);
+
+  border: 1px solid rgba(var(--rgb-gold), 0.35);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 30px 80px rgba(17, 35, 28, 0.32);
+
+  transform: translateY(16px) scale(0.97);
+
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.si-service-modal.is-open .si-service-modal__dialog {
+  transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   POPUP HEADER
+   ========================================================= */
+
+.si-service-modal__header {
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  padding: 1.5rem 1.4rem;
+
+  background-color: var(--color-forest);
+
+  background-image:
+    radial-gradient(circle at 88% -10%, rgba(var(--rgb-gold), 0.30), transparent 55%);
+
+  color: var(--color-warm-white);
+
+  border-radius: 24px 24px 0 0;
+}
+
+
+/* =========================================================
+   POPUP ICON
+   ========================================================= */
+
+.si-service-modal__icon {
+  position: relative;
+
+  z-index: 1;
+
+  width: 54px;
+  height: 54px;
+
+  flex-shrink: 0;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(var(--rgb-gold), 0.14);
+
+  border: 1px solid rgba(var(--rgb-gold), 0.32);
+
+  border-radius: 16px;
+
+  color: var(--color-soft-gold);
+}
+
+
+.si-service-modal__icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+
+/* =========================================================
+   POPUP TITLE AREA
+   ========================================================= */
+
+.si-service-modal__heading {
+  position: relative;
+
+  z-index: 1;
+
+  min-width: 0;
+
+  padding-right: 2.5rem;
+}
+
+
+.si-service-modal__eyebrow {
+  display: block;
+
+  margin-bottom: 0.25rem;
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color: var(--color-soft-gold);
+}
+
+
+.si-service-modal__title {
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size: clamp(1.55rem, 3vw, 2.05rem);
+
+  line-height: 1.08;
+
+  color: var(--color-warm-white);
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.si-service-modal__close {
+  position: absolute;
+
+  z-index: 2;
+
+  top: 1.1rem;
+  right: 1.1rem;
+
+  width: 38px;
+  height: 38px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid rgba(247, 243, 234, 0.20);
+
+  border-radius: 50%;
+
+  background: rgba(247, 243, 234, 0.08);
+
+  color: var(--color-warm-white);
+
+  cursor: pointer;
+
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+
+.si-service-modal__close:hover {
+  background-color: rgba(var(--rgb-gold), 0.18);
+
+  border-color: rgba(var(--rgb-gold), 0.42);
+
+  transform: rotate(90deg);
+}
+
+
+.si-service-modal__close:focus-visible {
+  outline: 2px solid var(--color-soft-gold);
+
+  outline-offset: 2px;
+}
+
+
+.si-service-modal__close svg {
+  width: 17px;
+  height: 17px;
+}
+
+
+/* =========================================================
+   POPUP BODY
+   ========================================================= */
+
+.si-service-modal__body {
+  padding: 1.55rem 1.4rem 1.4rem;
+}
+
+
+.si-service-modal__description {
+  position: relative;
+
+  margin: 0 0 1.4rem;
+
+  padding-left: 1rem;
+
+  border-left: 2px solid rgba(var(--rgb-gold), 0.45);
+
+  color: var(--color-charcoal);
+
+  font-size: 0.96rem;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   POPUP ACTIONS
+   ========================================================= */
+
+.si-service-modal__actions {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.7rem;
+}
+
+
+/* =========================================================
+   PRIMARY ACTION
+   ========================================================= */
+
+.si-service-modal__book {
+  width: 100%;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  min-height: 48px;
+
+  padding: 0.7rem 1rem;
+
+  border: 1px solid var(--color-forest);
+
+  border-radius: var(--radius-pill);
+
+  background-color: var(--color-forest);
+
+  color: var(--color-warm-white);
+
+  font-size: 0.88rem;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  box-shadow:
+    0 8px 20px rgba(var(--rgb-forest), 0.16);
+
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    background-color var(--transition-base);
+}
+
+
+.si-service-modal__book:hover,
+.si-service-modal__book:focus-visible {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 26px rgba(var(--rgb-forest), 0.20);
+
+  background-color: var(--color-forest);
+}
+
+
+.si-service-modal__book:focus-visible {
+  outline: 2px solid var(--color-gold);
+
+  outline-offset: 2px;
+}
+
+
+.si-service-modal__book svg {
+  width: 17px;
+  height: 17px;
+}
+
+
+/* =========================================================
+   CALL ACTION
+   ========================================================= */
+
+.si-service-modal__call {
+  width: 100%;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  min-height: 46px;
+
+  padding: 0.65rem 1rem;
+
+  border: 1px solid rgba(var(--rgb-forest), 0.25);
+
+  border-radius: var(--radius-pill);
+
+  background-color: transparent;
+
+  color: var(--color-forest);
+
+  font-size: 0.86rem;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    background-color var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+
+.si-service-modal__call:hover,
+.si-service-modal__call:focus-visible {
+  background-color: rgba(var(--rgb-forest), 0.06);
+
+  border-color: rgba(var(--rgb-forest), 0.40);
+
+  transform: translateY(-1px);
+}
+
+
+.si-service-modal__call:focus-visible {
+  outline: 2px solid var(--color-forest);
+
+  outline-offset: 2px;
+}
+
+
+.si-service-modal__call svg {
+  width: 17px;
+  height: 17px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .si-service-card,
+  .si-service-card::before,
+  .si-service-card::after,
+  .si-service-card .icon-badge,
+  .si-service-card .link-arrow svg,
+  .si-service-modal,
+  .si-service-modal__dialog,
+  .si-service-modal__close,
+  .si-service-modal__book,
+  .si-service-modal__call {
+    transition-duration: 0.01ms !important;
+  }
+
+  .si-service-card:hover {
+    transform: none;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .si-services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+  .si-services__header {
+    margin-top: 2.5rem;
+
+    margin-bottom: 1.15rem;
+  }
+
+
+  .si-services__header .eyebrow {
+    margin-bottom: 0.5rem;
+  }
+
+
+  .si-services__header h2 {
+    line-height: 1.24;
+
+    /* Break onto two lines: "Dental Treatment at" / "S & I Dental Clinic" */
+    white-space: normal;
+  }
+
+
+  .si-services__header h2 span {
+    display: block;
+
+    margin-top: 0.1em;
+  }
+
+
+  .si-services__header .lede {
+    margin-bottom: 0;
+
+    max-width: none;
+
+    text-align: center;
+  }
+
+
+  .si-services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 0.9rem;
+
+    width: 94%;
+
+    margin-inline: auto;
+  }
+
+
+  .si-service-card {
+    min-height: 190px;
+
+    padding: 1.6rem 1rem 1.4rem;
+
+    align-items: center;
+
+    text-align: center;
+
+    border-radius: 16px;
+
+    gap: 0.65rem;
+  }
+
+
+  .si-service-card .icon-badge {
+    width: 64px;
+    height: 64px;
+
+    border-radius: 18px;
+  }
+
+
+  .si-service-card .icon-badge svg {
+    width: 28px;
+    height: 28px;
+  }
+
+
+  .si-service-card h3 {
+    font-size: 1.05rem;
+
+    line-height: 1.28;
+  }
+
+
+  .si-service-card .link-arrow {
+    font-size: 0.85rem;
+
+    gap: 0.35rem;
+  }
+
+
+  .si-service-card .link-arrow svg {
+    width: 15px;
+    height: 15px;
+  }
+
+
+  /* =====================================================
+     MOBILE POPUP
+     ===================================================== */
+
+  .si-service-modal {
+    padding: 0.75rem;
+  }
+
+
+  .si-service-modal__dialog {
+    width: 100%;
+
+    max-height: 88vh;
+
+    border-radius: 20px;
+  }
+
+
+  .si-service-modal__header {
+    padding: 1.15rem 1rem;
+
+    gap: 0.75rem;
+
+    border-radius: 20px 20px 0 0;
+  }
+
+
+  .si-service-modal__icon {
+    width: 46px;
+    height: 46px;
+
+    border-radius: 14px;
+  }
+
+
+  .si-service-modal__icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+
+  .si-service-modal__heading {
+    padding-right: 2rem;
+  }
+
+
+  .si-service-modal__title {
+    font-size: 1.45rem;
+  }
+
+
+  .si-service-modal__body {
+    padding: 1.15rem 1rem 1rem;
+  }
+
+
+  .si-service-modal__description {
+    margin-bottom: 1rem;
+
+    font-size: 0.86rem;
+
+    line-height: 1.6;
+  }
+
+
+  .si-service-modal__close {
+    top: 0.75rem;
+    right: 0.75rem;
+
+    width: 34px;
+    height: 34px;
+  }
+
+}
+
+
+
+/* =========================================================
+   REAL RESULTS — SECTION SPACING OVERRIDE
+   Like #results itself, this section had no top/bottom padding
+   override anywhere in the codebase, so it was inheriting the
+   full default ".section" padding from style.css. That extra
+   bottom padding was stacking directly on top of the gallery
+   section's own top spacing, creating a large gap between
+   "Real Results" and the "Inside Our Clinic" gallery below it.
+   ========================================================= */
+
+#results.section {
+  padding-bottom: 2rem !important;
+}
+
+
+/* =========================================================
+   REAL RESULTS — SECTION HEADER
+   ========================================================= */
+
+#results .section-heading {
+    max-width: 760px;
+
+    margin: -3rem auto 1.35rem;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+#results .section-eyebrow {
+    display: inline-block;
+
+    margin-top: 0;
+
+    margin-bottom: 0.45rem;
+
+    font-family: var(--font-body);
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+
+    line-height: 1.1;
+
+    text-transform: uppercase;
+
+    color: var(--color-gold);
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+#results .section-title {
+    margin: 0;
+
+    font-family: var(--font-display);
+
+    font-size: clamp(2.2rem, 4vw, 3.1rem);
+
+    font-weight: 500;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.015em;
+
+    color: var(--color-forest);
+}
+
+
+/* =========================================================
+   DECORATIVE LINE
+   ========================================================= */
+
+#results .section-line {
+    display: block;
+
+    width: 38px;
+    height: 1px;
+
+    margin: 0.7rem auto;
+
+    background-color: var(--color-gold);
+}
+
+
+/* =========================================================
+   LEDE
+   ========================================================= */
+
+#results .section-description {
+    max-width: 60ch;
+
+    margin: 0 auto;
+
+    font-size: 1.25rem;
+
+    font-weight: 400;
+
+    line-height: 1.65;
+
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BEFORE & AFTER GRID
+   ========================================================= */
+
+.ba-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1.5rem;
+
+    max-width: 1080px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   COMPARISON CARD
+   ========================================================= */
+
+.ba-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   BEFORE / AFTER SLIDER
+   ========================================================= */
+
+.ba-slider {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-lg);
+
+    background-color: var(--color-white);
+
+    border: 1px solid rgba(var(--rgb-forest), 0.08);
+
+    box-shadow: var(--shadow-soft);
+
+    -webkit-user-select: none;
+    user-select: none;
+
+    touch-action: pan-y;
+
+    --reveal: 55%;
+}
+
+
+/* =========================================================
+   SLIDER IMAGES
+   ========================================================= */
+
+.ba-slider img {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    pointer-events: none;
+
+    -webkit-user-drag: none;
+}
+
+
+.ba-slider .ba-before {
+    z-index: 1;
+}
+
+
+.ba-slider .ba-after {
+    z-index: 2;
+
+    clip-path:
+        inset(
+            0
+            calc(100% - var(--reveal))
+            0
+            0
+        );
+}
+
+
+/* =========================================================
+   BEFORE / AFTER LABELS
+   ========================================================= */
+
+.ba-tag {
+    position: absolute;
+
+    top: 14px;
+
+    z-index: 3;
+
+    padding: 0.34rem 0.72rem;
+
+    font-family: var(--font-body);
+
+    font-size: 0.68rem;
+
+    font-weight: var(--weight-semibold);
+
+    letter-spacing: 0.08em;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    color: var(--color-white);
+
+    background-color: rgba(var(--rgb-forest), 0.82);
+
+    border-radius: var(--radius-pill);
+
+    pointer-events: none;
+}
+
+
+.ba-tag-before {
+    right: 14px;
+}
+
+
+.ba-tag-after {
+    left: 14px;
+}
+
+
+/* =========================================================
+   SLIDER HANDLE
+   ========================================================= */
+
+.ba-handle {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: var(--reveal);
+
+    z-index: 4;
+
+    width: 2px;
+
+    background-color: var(--color-white);
+
+    transform: translateX(-50%);
+
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.08);
+
+    pointer-events: none;
+}
+
+
+.ba-handle::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 44px;
+    height: 44px;
+
+    background-color: var(--color-white);
+
+    background-image:
+        linear-gradient(
+            90deg,
+            transparent 45%,
+            var(--color-sage-dark) 45%,
+            var(--color-sage-dark) 55%,
+            transparent 55%
+        );
+
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+
+    box-shadow: var(--shadow-soft);
+}
+
+
+/* =========================================================
+   RANGE INPUT
+   ========================================================= */
+
+.ba-range {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+
+    opacity: 0;
+
+    cursor: ew-resize;
+
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+.ba-range::-webkit-slider-thumb {
+    width: 44px;
+    height: 44px;
+
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+.ba-range::-moz-range-thumb {
+    width: 44px;
+    height: 44px;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   CASE CAPTION
+   ========================================================= */
+
+.ba-caption {
+    display: flex;
+
+    align-items: baseline;
+
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    margin-top: 0.55rem;
+}
+
+
+.ba-caption h3 {
+    margin: 0;
+
+    font-family: var(--font-display);
+
+    font-size: 1.1rem;
+
+    font-weight: 600;
+
+    line-height: 1.25;
+
+    color: var(--color-forest);
+}
+
+
+.ba-caption span {
+    font-family: var(--font-body);
+
+    font-size: 0.78rem;
+
+    line-height: 1.3;
+
+    color: var(--color-muted);
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+   ========================================================= */
+
+.ba-disclaimer {
+    margin: 0.45rem 0 0;
+
+    font-family: var(--font-body);
+
+    font-size: 1rem;
+
+    line-height: 1.4;
+
+    color: var(--color-muted);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   REAL RESULTS — BOTTOM GREEN STRIP
+   ========================================================= */
+
+#results::after {
+    content: "";
+
+    display: block;
+
+    width: 100%;
+
+    height: 3px;
+
+    margin-top: 1rem;
+
+    background-color: var(--color-forest);
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    #results .section-heading {
+        max-width: 700px;
+
+        margin-bottom: 1.3rem;
+    }
+
+
+    .ba-grid {
+        gap: 1.15rem;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+    #results.section {
+        padding-bottom: 1.5rem !important;
+    }
+
+
+    #results .section-heading {
+        max-width: 94%;
+        margin-bottom: 1.15rem;
+    }
+
+
+    /* =====================================================
+       MOBILE EYEBROW
+       ===================================================== */
+
+    #results .section-eyebrow {
+        margin-bottom: 0.4rem;
+
+        font-size: 1.25rem;
+
+        letter-spacing: 0.1em;
+    }
+
+
+    /* =====================================================
+       MOBILE HEADING
+       ===================================================== */
+
+    #results .section-title {
+        font-size: 2.05rem;
+
+        line-height: 1.08;
+    }
+
+
+    /* =====================================================
+       MOBILE DECORATIVE LINE
+       ===================================================== */
+
+    #results .section-line {
+        width: 34px;
+
+        margin: 0.6rem auto;
+    }
+
+
+    /* =====================================================
+       MOBILE LEDE
+       ===================================================== */
+
+    #results .section-description {
+        max-width: 42ch;
+
+        font-size: 1rem;
+
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       MOBILE GRID
+       ===================================================== */
+
+    .ba-grid {
+        grid-template-columns: 1fr;
+
+        gap: 1.1rem;
+
+        width: 94%;
+
+        margin-inline: auto;
+    }
+
+
+    /* =====================================================
+       MOBILE SLIDER
+       ===================================================== */
+
+    .ba-slider {
+        aspect-ratio: 16 / 9;
+
+        border-radius: 18px;
+    }
+
+
+    /* =====================================================
+       MOBILE LABELS
+       ===================================================== */
+
+    .ba-tag {
+        top: 10px;
+
+        padding: 0.3rem 0.62rem;
+
+        font-size: 0.62rem;
+    }
+
+
+    .ba-tag-before {
+        right: 10px;
+    }
+
+
+    .ba-tag-after {
+        left: 10px;
+    }
+
+
+    /* =====================================================
+       MOBILE HANDLE
+       ===================================================== */
+
+    .ba-handle::after {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    /* =====================================================
+       MOBILE CAPTION
+       ===================================================== */
+
+    .ba-caption {
+        margin-top: 0.45rem;
+
+        gap: 0.75rem;
+    }
+
+
+    .ba-caption h3 {
+        font-size: 1rem;
+    }
+
+
+    .ba-caption span {
+        font-size: 0.74rem;
+    }
+
+
+    /* =====================================================
+       MOBILE DISCLAIMER
+       ===================================================== */
+
+    .ba-disclaimer {
+        margin-top: 0.35rem;
+
+        font-size: 0.85rem;
+    }
+
+
+    /* =====================================================
+       MOBILE GREEN STRIP
+       ===================================================== */
+
+    #results::after {
+        height: 2px;
+
+        margin-top: 0.75rem;
+    }
+
+}

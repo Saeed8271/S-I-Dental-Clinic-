@@ -1,0 +1,2433 @@
+/* =========================================================
+   S & I DENTAL CLINIC — HOMEPAGE / GENERAL SECTIONS
+   sections.css
+   ========================================================= */
+
+
+/* =========================================================
+   QUICK INFO STRIP
+   ========================================================= */
+
+.si-quickinfo {
+  background-color: var(--color-forest);
+  color: var(--color-warm-white);
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   QUICK INFO — DESKTOP
+   ========================================================= */
+
+.si-quickinfo .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+
+.si-quickinfo__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding-block: 1rem;
+  padding-inline: var(--space-md);
+
+  border-left: 1px solid rgba(247, 243, 234, 0.12);
+}
+
+
+.si-quickinfo__item:first-child {
+  border-left: none;
+  padding-inline-start: 0;
+}
+
+
+/* Icon */
+
+.si-quickinfo__item .icon-badge {
+  width: 40px;
+  height: 40px;
+
+  background-color: rgba(199, 164, 90, 0.14);
+  color: var(--color-soft-gold);
+
+  flex-shrink: 0;
+}
+
+
+.si-quickinfo__item .icon-badge svg {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* Label */
+
+.si-quickinfo__item .label {
+  display: block;
+
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: var(--color-soft-gold);
+
+  margin-bottom: 0.12rem;
+}
+
+
+/* Value */
+
+.si-quickinfo__item .value {
+  font-family: var(--font-display);
+
+  font-size: 0.98rem;
+  font-weight: 600;
+
+  color: var(--color-warm-white);
+
+  line-height: 1.25;
+}
+
+
+.si-quickinfo__item a.value:hover {
+  color: var(--color-soft-gold);
+}
+
+
+/* =========================================================
+   MOBILE QUICK INFO — THIN SLICK BAR
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+  .si-quickinfo {
+    width: 100%;
+    height: 7px;
+
+    background-color: var(--color-forest);
+
+    box-shadow:
+      inset 0 2px 5px rgba(0, 0, 0, 0.10),
+      inset 0 -2px 5px rgba(255, 255, 255, 0.04);
+
+    overflow: hidden;
+  }
+
+
+  .si-quickinfo .container {
+    display: none;
+  }
+
+}
+
+
+/* =========================================================
+   ABOUT PREVIEW
+   ========================================================= */
+
+.si-about {
+  overflow: hidden;
+  text-align: center;
+
+  padding-bottom: 2.5rem;
+}
+
+
+/* Main content */
+
+.si-about .container {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+
+.si-about__content {
+  width: 100%;
+  max-width: none;
+
+  margin-inline: auto;
+  margin-top: -1.75rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Eyebrow */
+
+.si-about__content .eyebrow {
+  display: inline-block;
+
+  margin-bottom: 0.75rem;
+
+  font-size: 1.25rem;
+}
+
+
+/* Heading */
+
+.si-about__content h2 {
+  width: 100%;
+  max-width: 850px;
+
+  margin-inline: auto;
+}
+
+
+.si-about__content h2 span {
+  color: rgba(33, 33, 33, 0.79);
+}
+
+
+/* Description */
+
+.si-about__content p.lede {
+  width: 100%;
+  max-width: none;
+
+  margin-top: 1rem;
+  margin-inline: auto;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   ABOUT BENEFIT CAPSULES
+   ========================================================= */
+
+.si-about__list {
+  width: fit-content;
+
+  margin-top: var(--space-md);
+  padding: 0;
+
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+
+  gap: 0.75rem;
+
+  text-align: center;
+}
+
+
+.si-about__list li {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.5rem;
+
+  padding: 0.65rem 0.9rem;
+
+  border: 1px solid rgba(var(--rgb-forest), 0.28);
+
+  border-radius: var(--radius-pill);
+
+  background-color: rgba(var(--rgb-forest), 0.035);
+
+  color: var(--color-forest);
+
+  font-size: 0.88rem;
+  font-weight: 600;
+
+  line-height: 1.2;
+
+  white-space: nowrap;
+}
+
+
+.si-about__list li svg {
+  width: 17px;
+  height: 17px;
+
+  color: var(--color-gold);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ABOUT BUTTONS
+   ========================================================= */
+
+.si-about__buttons {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 0.75rem;
+
+  margin-top: var(--space-lg);
+  margin-bottom: 0;
+}
+
+
+.si-about__buttons .btn-si {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   ABOUT — MOBILE
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+  .si-about {
+    padding-bottom: 1.5rem;
+  }
+
+
+  .si-about__content {
+    max-width: none;
+    width: 100%;
+  }
+
+
+  /* Eyebrow */
+
+  .si-about__content .eyebrow {
+    margin-bottom: 0.65rem;
+    font-size: 1rem;
+  }
+
+
+  /* Heading */
+
+  .si-about__content h2 {
+    max-width: 25ch;
+    line-height: 1.08;
+  }
+
+
+  /* Paragraph */
+
+  .si-about__content p.lede {
+    width: 100%;
+    max-width: none;
+
+    margin-top: 0.8rem;
+
+    line-height: 1.6;
+  }
+
+
+  /* Capsules */
+
+  .si-about__list {
+    width: 100%;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 0.15rem;
+
+    margin-top: 0.9rem;
+  }
+
+
+  .si-about__list li {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.3rem;
+
+    padding: 0.45rem 0.15rem;
+
+    border: none;
+    border-radius: 0;
+
+    background: transparent;
+
+    color: var(--color-forest);
+
+    font-size: 0.63rem;
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    text-align: center;
+
+    white-space: normal;
+  }
+
+
+  .si-about__list li svg {
+    width: 17px;
+    height: 17px;
+
+    color: var(--color-gold);
+
+    flex-shrink: 0;
+  }
+
+
+  /* Buttons */
+
+  .si-about__buttons {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 0.5rem;
+
+    margin-top: 1.1rem;
+  }
+
+
+  .si-about__buttons .btn-si {
+    width: 100%;
+    min-width: 0;
+
+    justify-content: center;
+
+    padding-inline: 0.5rem;
+
+    font-size: 0.78rem;
+  }
+
+}
+
+
+/* =========================================================
+   WHY CHOOSE US
+   ========================================================= */
+
+.si-why {
+  padding-top: 1.75rem;
+  padding-bottom: 2.5rem;
+}
+
+
+/* =========================================================
+   WHY — SECTION HEADER
+   ========================================================= */
+
+.si-why .section-header {
+  margin-top: 0;
+  margin-bottom: var(--space-lg);
+}
+
+
+.si-why .section-header .eyebrow {
+  font-size: 1.25rem;
+}
+
+
+/* =========================================================
+   WHY GRID — DESKTOP
+   ========================================================= */
+
+.si-why__grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  gap: 1px;
+
+  background-color: rgba(var(--rgb-forest), 0.12);
+
+  border-radius: var(--radius-md);
+
+  overflow: hidden;
+
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* =========================================================
+   WHY CARD — DESKTOP
+   ========================================================= */
+
+.si-why__item {
+  position: relative;
+
+  min-width: 0;
+
+  background-color: var(--color-white);
+
+  padding: 1.35rem 1rem 1.25rem;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 0.55rem;
+
+  transition:
+    background-color var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+
+.si-why__item:hover {
+  background-color: var(--color-cream);
+
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 25px rgba(var(--rgb-forest), 0.08);
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   WHY ICON
+   ========================================================= */
+
+.si-why__item .icon-badge {
+  width: 42px;
+  height: 42px;
+
+  flex-shrink: 0;
+
+  background-color: rgba(var(--rgb-gold), 0.12);
+
+  color: var(--color-gold);
+
+  transition:
+    transform var(--transition-base),
+    background-color var(--transition-base);
+}
+
+
+.si-why__item:hover .icon-badge {
+  transform: translateY(-2px) scale(1.04);
+
+  background-color: rgba(var(--rgb-gold), 0.18);
+}
+
+
+.si-why__item .icon-badge svg {
+  width: 19px;
+  height: 19px;
+}
+
+
+/* =========================================================
+   WHY TITLE
+   ========================================================= */
+
+.si-why__item h3 {
+  margin-top: 0.15rem;
+
+  font-size: 1rem;
+
+  line-height: 1.25;
+}
+
+
+/* =========================================================
+   WHY DESCRIPTION
+   ========================================================= */
+
+.si-why__item p {
+  margin: 0;
+
+  font-size: 0.82rem;
+
+  line-height: 1.55;
+
+  color: var(--color-charcoal);
+
+  opacity: 0.76;
+}
+
+
+/* =========================================================
+   WHY CHOOSE US — MOBILE
+   =========================================================
+   
+   Exact structure:
+   
+   ROW 1 → 1 | 2
+   ROW 2 → 3 | 4
+   ROW 3 →   5
+   
+   No numbers.
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+  .si-why {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+  }
+
+
+  /* =======================================================
+     HEADER
+     ======================================================= */
+
+  .si-why .section-header {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+
+  .si-why .section-header .eyebrow {
+    margin-bottom: 0.55rem;
+
+    font-size: 1rem;
+  }
+
+
+  .si-why .section-header h2 {
+    line-height: 1.08;
+  }
+
+
+  .si-why .section-header p.lede {
+    margin-top: 0.55rem;
+
+    font-size: 0.86rem;
+
+    line-height: 1.45;
+  }
+
+
+  /* =======================================================
+     GRID
+     ======================================================= */
+
+  .si-why__grid {
+    display: grid !important;
+
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr)) !important;
+
+    grid-auto-flow: row;
+
+    width: calc(100% - 2rem);
+
+    max-width: 360px;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    gap: 0.65rem;
+
+    background: transparent;
+
+    border: 0;
+
+    border-radius: 0;
+
+    overflow: visible;
+
+    box-shadow: none;
+  }
+
+
+  /* =======================================================
+     CARDS
+     ======================================================= */
+
+  .si-why__item {
+    width: 100% !important;
+
+    min-width: 0;
+
+    min-height: 96px;
+
+    box-sizing: border-box;
+
+    padding: 0.8rem 0.5rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.4rem;
+
+    text-align: center;
+
+    background-color: var(--color-white);
+
+    border: 1px solid rgba(var(--rgb-forest), 0.13);
+
+    border-radius: 14px;
+
+    box-shadow:
+      0 4px 14px rgba(var(--rgb-forest), 0.055);
+
+    transition:
+      transform var(--transition-base),
+      box-shadow var(--transition-base);
+  }
+
+
+  /* =======================================================
+     FIFTH CARD — CENTERED
+     ======================================================= */
+
+  .si-why__item:nth-child(5) {
+    grid-column: 1 / -1;
+
+    width: 50% !important;
+
+    justify-self: center;
+  }
+
+
+  /* =======================================================
+     ICON
+     ======================================================= */
+
+  .si-why__item .icon-badge {
+    width: 34px;
+
+    height: 34px;
+
+    margin: 0;
+
+    flex-shrink: 0;
+
+    background-color: rgba(var(--rgb-gold), 0.12);
+
+    color: var(--color-gold);
+  }
+
+
+  .si-why__item .icon-badge svg {
+    width: 16px;
+
+    height: 16px;
+  }
+
+
+  /* =======================================================
+     TITLE
+     ======================================================= */
+
+  .si-why__item h3 {
+    width: 100%;
+
+    max-width: 145px;
+
+    margin: 0;
+
+    font-size: 0.78rem;
+
+    line-height: 1.2;
+
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     DESCRIPTIONS HIDDEN ON MOBILE
+     ======================================================= */
+
+  .si-why__item p {
+    display: none;
+  }
+
+
+  /* =======================================================
+     MOBILE HOVER
+     ======================================================= */
+
+  .si-why__item:hover {
+    transform: translateY(-2px);
+
+    background-color: var(--color-white);
+
+    box-shadow:
+      0 6px 16px rgba(var(--rgb-forest), 0.08);
+  }
+
+
+  .si-why__item:hover .icon-badge {
+    transform: none;
+
+    background-color: rgba(var(--rgb-gold), 0.12);
+  }
+
+}
+
+
+/* =========================================================
+   DOCTOR SECTION
+   ========================================================= */
+
+.si-doctor {
+  overflow: hidden;
+
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+
+/* =========================================================
+   MAIN GRID — DESKTOP
+   ========================================================= */
+
+.si-doctor .container {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 0.65fr)
+    minmax(0, 1.35fr);
+
+  gap: 2.5rem;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   DOCTOR VISUAL
+   ========================================================= */
+
+.si-doctor__visual {
+  position: relative;
+
+  width: 100%;
+  max-width: 360px;
+
+  margin-inline: auto;
+
+  border-radius: var(--radius-lg);
+
+  overflow: hidden;
+
+  aspect-ratio: 3 / 4;
+
+  box-shadow: var(--shadow-lg);
+}
+
+
+.si-doctor__visual img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: top center;
+}
+
+
+/* Gold inner frame */
+
+.si-doctor__visual::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 10px;
+
+  border: 1px solid rgba(217, 196, 138, 0.35);
+
+  border-radius: calc(var(--radius-lg) - 5px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   IMAGE BADGE
+   ========================================================= */
+
+.si-doctor__badge {
+  position: absolute;
+
+  top: 0.85rem;
+  left: 0.85rem;
+
+  z-index: 2;
+
+  background: rgba(23, 60, 46, 0.62);
+
+  backdrop-filter: blur(6px);
+
+  color: var(--color-soft-gold);
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  padding: 0.45rem 0.75rem;
+
+  border-radius: var(--radius-pill);
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.si-doctor__content {
+  min-width: 0;
+
+  padding-block: 0;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.si-doctor__content .eyebrow {
+  display: inline-block;
+
+  margin-bottom: 0.55rem;
+
+  font-size: 1.25rem;
+}
+
+
+/* =========================================================
+   DOCTOR NAME
+   ========================================================= */
+
+.si-doctor__name {
+  margin: 0 0 0.2rem;
+
+  font-size: clamp(1.8rem, 2.8vw, 2.35rem);
+
+  line-height: 1.12;
+}
+
+
+/* =========================================================
+   ROLE
+   ========================================================= */
+
+.si-doctor__role {
+  display: block;
+
+  margin-bottom: 0.9rem;
+
+  font-family: var(--font-body);
+
+  font-size: 0.95rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.035em;
+
+  color: var(--color-soft-gold);
+}
+
+
+/* =========================================================
+   BIO
+   ========================================================= */
+
+.si-doctor__bio {
+  width: 100%;
+
+  max-width: none;
+
+  margin: 0 0 1rem;
+
+  color: rgba(247, 243, 234, 0.82);
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   CREDENTIALS
+   ========================================================= */
+
+.si-doctor__credentials {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.55rem;
+
+  margin-bottom: 0.9rem;
+}
+
+
+.si-doctor__credential {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.5rem;
+
+  padding: 0.55rem 0.85rem;
+
+  background-color: rgba(247, 243, 234, 0.08);
+
+  border: 1px solid rgba(217, 196, 138, 0.18);
+
+  border-radius: var(--radius-pill);
+
+  font-size: 0.82rem;
+
+  font-weight: 500;
+
+  line-height: 1.35;
+
+  color: rgba(247, 243, 234, 0.9);
+}
+
+
+.si-doctor__credential .icon {
+  width: 1rem;
+
+  height: 1rem;
+
+  color: var(--color-soft-gold);
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   LINKEDIN
+   ========================================================= */
+
+.si-doctor__link {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.45rem;
+
+  margin-top: 0;
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  color: var(--color-soft-gold);
+
+  transition:
+    color var(--transition-base),
+    transform var(--transition-base);
+}
+
+
+.si-doctor__link .icon {
+  width: 1rem;
+
+  height: 1rem;
+}
+
+
+.si-doctor__link:hover {
+  color: var(--color-warm-white);
+
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   QUOTE
+   ========================================================= */
+
+.si-doctor__quote {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.8rem;
+
+  padding-top: 0.85rem;
+
+  margin-top: 0.85rem;
+
+  border-top: 1px solid rgba(247, 243, 234, 0.14);
+}
+
+
+.si-doctor__quote .section-line {
+  width: 32px;
+
+  height: 1px;
+
+  margin: 0;
+
+  background-color: var(--color-soft-gold);
+
+  flex-shrink: 0;
+}
+
+
+.si-doctor__quote p {
+  margin: 0;
+
+  font-family: var(--font-display);
+
+  font-size: 1.15rem;
+
+  font-style: italic;
+
+  color: var(--color-warm-white);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+  .si-doctor {
+    padding-top: 1.5rem;
+
+    padding-bottom: 1.5rem;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE CONTAINER
+     ------------------------------------------------------- */
+
+  .si-doctor .container {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.65rem;
+  }
+
+
+  /* -------------------------------------------------------
+     CONTENT WRAPPER
+     
+     Allows the eyebrow to be visually placed
+     before the image without changing desktop HTML.
+     ------------------------------------------------------- */
+
+  .si-doctor__content {
+    display: contents;
+  }
+
+
+  /* -------------------------------------------------------
+     EYEBROW
+     
+     Appears FIRST on mobile.
+     ------------------------------------------------------- */
+
+  .si-doctor__content .eyebrow {
+    order: 1;
+
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 1rem;
+  }
+
+
+  /* -------------------------------------------------------
+     IMAGE
+     
+     Wider and vertically shorter.
+     ------------------------------------------------------- */
+
+.si-doctor__visual {
+  order: 2;
+
+  width: 96%;
+  max-width: 390px;
+
+  margin-inline: auto;
+
+  aspect-ratio: 16 / 10;
+}
+
+  .si-doctor__visual::after {
+    inset: 8px;
+
+    border-radius: calc(var(--radius-lg) - 4px);
+  }
+
+
+  .si-doctor__badge {
+    top: 0.7rem;
+
+    left: 0.7rem;
+
+    font-size: 0.58rem;
+
+    padding: 0.4rem 0.65rem;
+  }
+
+
+  /* -------------------------------------------------------
+     DOCTOR NAME
+     ------------------------------------------------------- */
+
+  .si-doctor__name {
+    order: 3;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 1.6rem;
+
+    line-height: 1.05;
+  }
+
+    /* -------------------------------------------------------
+     DOCTOR FULL NAME
+     ------------------------------------------------------- */
+
+  .si-doctor__role {
+    order: 4;
+
+    margin: -0.15rem 0 0;
+
+    text-align: center;
+
+    font-size: 0.78rem;
+
+    line-height: 1.15;
+  }
+
+
+  /* -------------------------------------------------------
+     ROLE
+     ------------------------------------------------------- */
+
+  .si-doctor__role {
+    order: 4;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 0.78rem;
+  }
+
+
+  /* -------------------------------------------------------
+     BIO
+     ------------------------------------------------------- */
+
+  .si-doctor__bio {
+    order: 5;
+
+    width: 100%;
+
+    max-width: none;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 0.86rem;
+
+    line-height: 1.55;
+  }
+
+
+  /* -------------------------------------------------------
+     CREDENTIALS
+     ------------------------------------------------------- */
+
+  .si-doctor__credentials {
+    order: 6;
+
+    justify-content: center;
+
+    gap: 0.4rem;
+
+    margin: 0;
+  }
+
+
+  .si-doctor__credential {
+    justify-content: center;
+
+    padding: 0.45rem 0.6rem;
+
+    font-size: 0.7rem;
+
+    text-align: left;
+  }
+
+
+  .si-doctor__credential .icon {
+    width: 0.85rem;
+
+    height: 0.85rem;
+  }
+
+
+  /* -------------------------------------------------------
+     LINKEDIN
+     ------------------------------------------------------- */
+
+  .si-doctor__link {
+    order: 7;
+
+    justify-content: center;
+
+    font-size: 0.78rem;
+  }
+
+
+  /* -------------------------------------------------------
+     QUOTE
+     ------------------------------------------------------- */
+
+  .si-doctor__quote {
+    order: 8;
+
+    justify-content: center;
+
+    gap: 0.55rem;
+
+    margin-top: 0.15rem;
+
+    padding-top: 0.75rem;
+  }
+
+
+  .si-doctor__quote .section-line {
+    width: 22px;
+  }
+
+
+  .si-doctor__quote p {
+    font-size: 0.95rem;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE HOVER RESET
+     ------------------------------------------------------- */
+
+  .si-doctor__link:hover {
+    transform: none;
+  }
+
+}
+
+/* =========================================================
+   PATIENT EXPERIENCE / SOCIAL PROOF
+
+   Redesign notes: brought the cards in line with the rest of
+   the site's card language (forest/gold accents, rising accent
+   bar, soft gold corner glow) instead of the plain thin dash.
+   Icon badges are now the same rounded-square "squircle" used
+   elsewhere, sized up and given a hover fill. The shared
+   heading classes (.section-heading, .section-eyebrow,
+   .section-title, .section-line, .section-description) are
+   used sitewide, so they're only overridden here scoped to
+   #reviews — never edited globally.
+   ========================================================= */
+
+
+/* =========================================================
+   SECTION SPACING OVERRIDE (scoped to #reviews only)
+   The gap above the eyebrow comes from the shared ".section"
+   class on the <section> wrapper (same cause as the Services
+   section), not from anything in this file — zeroed out here
+   for #reviews specifically so it doesn't affect other
+   sections using ".section".
+   ========================================================= */
+
+#reviews.section {
+  padding-top: 0 !important;
+}
+
+
+/* =========================================================
+   SECTION HEADING — CENTERED (scoped to #reviews only)
+   The "center" class on .section-heading isn't enough on its
+   own if .section-heading is a flex container elsewhere in the
+   site's base CSS — text-align centers text inside a box, not
+   the box itself. This forces every child (eyebrow, title,
+   line, description) onto a centered flex column, scoped so it
+   can't affect .section-heading on any other section.
+   ========================================================= */
+
+#reviews .section-heading {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  margin-top: 0;
+}
+
+
+#reviews .section-eyebrow,
+#reviews .section-title,
+#reviews .section-line,
+#reviews .section-description {
+  margin-left: auto;
+
+  margin-right: auto;
+}
+
+
+#reviews .section-description {
+  max-width: 52ch;
+}
+
+
+/* =========================================================
+   SECTION EYEBROW — MATCH THE REST OF THE SITE
+   .section-eyebrow was inheriting a plain dark/default color
+   with no letter-spacing — this brings it in line with the
+   gold, bold, letter-spaced eyebrow style used everywhere else
+   (Services, Doctor, Gallery), scoped to #reviews only.
+   ========================================================= */
+
+#reviews .section-eyebrow {
+  display: inline-block;
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.06em;
+
+  text-transform: uppercase;
+
+  color: var(--color-gold);
+}
+
+.proof-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 1.25rem;
+
+  margin-top: 2.25rem;
+}
+
+
+/* =========================================================
+   PROOF CARD
+   ========================================================= */
+
+.proof-card {
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  min-width: 0;
+
+  padding: 1.85rem 1.65rem 1.6rem;
+
+  background-color: var(--color-warm-white);
+
+  border: 1px solid rgba(var(--rgb-forest), 0.10);
+
+  border-radius: var(--radius-md);
+
+  box-shadow:
+    0 1px 2px rgba(var(--rgb-forest), 0.06),
+    0 10px 24px rgba(var(--rgb-forest), 0.06);
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+
+/* Rising accent bar — same signature used across the site's cards */
+
+.proof-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(90deg, var(--color-forest), var(--color-gold));
+
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Soft warm glow in the top-right corner */
+
+.proof-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -55%;
+  right: -30%;
+
+  width: 55%;
+  height: 120%;
+
+  background: radial-gradient(closest-side, rgba(var(--rgb-gold), 0.16), transparent 70%);
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD HOVER / FOCUS
+   ========================================================= */
+
+.proof-card:hover,
+.proof-card:focus-within {
+  transform: translateY(-6px);
+
+  border-color: rgba(var(--rgb-gold), 0.35);
+
+  box-shadow:
+    0 1px 2px rgba(var(--rgb-forest), 0.06),
+    0 20px 40px rgba(var(--rgb-forest), 0.12);
+}
+
+
+.proof-card:hover::before,
+.proof-card:focus-within::before {
+  transform: scaleX(1);
+}
+
+
+.proof-card:hover::after,
+.proof-card:focus-within::after {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   PROOF ICON
+   ========================================================= */
+
+.proof-icon-wrap {
+  position: relative;
+
+  z-index: 1;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 56px;
+  height: 56px;
+
+  margin-bottom: 1.1rem;
+
+  border-radius: 16px;
+
+  background-color: rgba(var(--rgb-gold), 0.11);
+
+  color: var(--color-gold);
+
+  border: 1px solid rgba(var(--rgb-gold), 0.22);
+
+  transition:
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color var(--transition-normal),
+    border-color var(--transition-normal),
+    color var(--transition-normal);
+}
+
+
+.proof-card:hover .proof-icon-wrap,
+.proof-card:focus-within .proof-icon-wrap {
+  transform: translateY(-2px) rotate(-6deg);
+
+  background-color: var(--color-gold);
+
+  border-color: var(--color-gold);
+
+  color: var(--color-white);
+}
+
+
+.proof-icon-wrap .icon {
+  width: 24px;
+  height: 24px;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.proof-card__content {
+  position: relative;
+
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  flex-grow: 1;
+
+  width: 100%;
+}
+
+
+.proof-card__eyebrow {
+  display: block;
+
+  margin-bottom: 0.3rem;
+
+  font-family: var(--font-body);
+
+  font-size: 0.74rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+
+  color: var(--color-gold);
+}
+
+
+.proof-card h3 {
+  margin: 0 0 0.5rem;
+
+  font-family: var(--font-display);
+
+  font-size: 1.4rem;
+  font-weight: 600;
+
+  line-height: 1.22;
+
+  color: var(--color-forest);
+}
+
+
+.proof-card p {
+  flex-grow: 1;
+
+  margin: 0 0 1.4rem;
+
+  max-width: 38ch;
+
+  font-family: var(--font-body);
+
+  font-size: 0.9rem;
+
+  line-height: 1.65;
+
+  color: var(--color-charcoal);
+
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   PROOF BUTTON
+   ========================================================= */
+
+.proof-card .btn-si {
+  position: relative;
+
+  z-index: 1;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  margin-top: auto;
+
+  padding: 0.65rem 1.35rem;
+
+  border-radius: var(--radius-pill);
+
+  border-color: rgba(var(--rgb-forest), 0.28);
+
+  color: var(--color-forest);
+
+  font-weight: 600;
+
+  transition:
+    background-color var(--transition-normal),
+    border-color var(--transition-normal),
+    color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+
+.proof-card .btn-si::after {
+  content: "\2192";
+
+  display: inline-block;
+
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+.proof-card .btn-si:hover,
+.proof-card .btn-si:focus-visible {
+  background-color: var(--color-forest);
+
+  border-color: var(--color-forest);
+
+  color: var(--color-warm-white);
+
+  transform: translateY(-2px);
+}
+
+
+.proof-card .btn-si:hover::after,
+.proof-card .btn-si:focus-visible::after {
+  transform: translateX(3px);
+}
+
+
+.proof-card .btn-si:focus-visible {
+  outline: 2px solid var(--color-gold);
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.proof-card:focus-within {
+  outline: none;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .proof-card,
+  .proof-card::before,
+  .proof-card::after,
+  .proof-icon-wrap,
+  .proof-card .btn-si,
+  .proof-card .btn-si::after {
+    transition-duration: 0.01ms !important;
+  }
+
+  .proof-card:hover {
+    transform: none;
+  }
+
+  .proof-card:hover .proof-icon-wrap {
+    transform: none;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .proof-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1rem;
+
+    margin-top: 2rem;
+  }
+
+
+  .proof-card:last-child {
+    grid-column: 1 / -1;
+
+    width: calc(50% - 0.5rem);
+
+    justify-self: center;
+  }
+
+}
+
+/* =========================================================
+   PATIENT EXPERIENCE — MOBILE
+   3 CARDS IN ONE ROW
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+  /* -------------------------------------------------------
+     GRID — FORCE ALL 3 CARDS INTO ONE ROW
+     ------------------------------------------------------- */
+
+  #reviews .proof-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 0.75rem;
+
+    width: 100%;
+    margin-top: 1.75rem;
+  }
+
+
+  /* -------------------------------------------------------
+     CARD — SIMPLE, CLEAN MOBILE PRESENTATION
+     ------------------------------------------------------- */
+
+  #reviews .proof-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    width: 100%;
+    min-width: 0;
+
+    padding: 0;
+
+    background: transparent;
+
+    border: none;
+    border-radius: 0;
+
+    box-shadow: none;
+
+    text-align: center;
+
+    transform: none;
+  }
+
+
+  /* IMPORTANT:
+     Override the tablet rule that puts the last card
+     on its own row.
+  */
+
+  #reviews .proof-card:last-child {
+    grid-column: auto;
+
+    width: 100%;
+    justify-self: auto;
+  }
+
+
+  /* -------------------------------------------------------
+     REMOVE DESCRIPTIONS
+     ------------------------------------------------------- */
+
+  #reviews .proof-card p {
+    display: none;
+  }
+
+
+  /* -------------------------------------------------------
+     ICON
+     ------------------------------------------------------- */
+
+  #reviews .proof-icon-wrap {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 48px;
+    height: 48px;
+
+    margin: 0 0 0.65rem;
+
+    flex-shrink: 0;
+
+    border: 1px solid rgba(var(--rgb-gold), 0.35);
+
+    border-radius: 50%;
+
+    background-color: rgba(var(--rgb-gold), 0.08);
+
+    color: var(--color-gold);
+
+    box-shadow:
+      0 5px 16px rgba(var(--rgb-forest), 0.07);
+
+    transition:
+      transform var(--transition-fast),
+      background-color var(--transition-fast),
+      box-shadow var(--transition-fast);
+  }
+
+
+  #reviews .proof-icon-wrap .icon {
+    width: 19px;
+    height: 19px;
+  }
+
+
+  /* -------------------------------------------------------
+     KEEP ALL SOCIAL ICONS IN OUR BRAND SYSTEM
+     ------------------------------------------------------- */
+
+  #reviews .proof-grid .proof-card:nth-child(1) .proof-icon-wrap,
+  #reviews .proof-grid .proof-card:nth-child(2) .proof-icon-wrap,
+  #reviews .proof-grid .proof-card:nth-child(3) .proof-icon-wrap {
+    background-color: rgba(var(--rgb-gold), 0.08);
+
+    color: var(--color-gold);
+
+    border-color: rgba(var(--rgb-gold), 0.35);
+  }
+
+
+  /* -------------------------------------------------------
+     CARD TITLE
+     ------------------------------------------------------- */
+
+  #reviews .proof-card h3 {
+    display: block;
+
+    width: 100%;
+
+    margin: 0;
+
+    font-family: var(--font-body);
+
+    font-size: 0.72rem;
+    font-weight: 600;
+
+    line-height: 1.3;
+
+    letter-spacing: 0;
+
+    color: var(--color-forest);
+
+    text-align: center;
+  }
+
+
+  /* -------------------------------------------------------
+     HIDE DESKTOP BUTTON
+     
+     Keep the button as a full-card clickable layer.
+     ------------------------------------------------------- */
+
+  #reviews .proof-card .btn-si {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 5;
+
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    border-radius: 14px;
+
+    background: transparent;
+
+    color: transparent;
+
+    font-size: 0;
+
+    box-shadow: none;
+
+    text-indent: -9999px;
+
+    overflow: hidden;
+  }
+
+
+  #reviews .proof-card .btn-si::after {
+    display: none;
+  }
+
+
+  /* -------------------------------------------------------
+     REMOVE DESKTOP HOVER CARD EFFECTS
+     ------------------------------------------------------- */
+
+  #reviews .proof-card:hover,
+  #reviews .proof-card:focus-within {
+    transform: none;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+  }
+
+
+  /* -------------------------------------------------------
+     MOBILE INTERACTION
+     ------------------------------------------------------- */
+
+  #reviews .proof-card:active .proof-icon-wrap,
+  #reviews .proof-card:focus-within .proof-icon-wrap {
+    transform: scale(0.96);
+
+    background-color: rgba(var(--rgb-gold), 0.14);
+
+    box-shadow:
+      0 7px 18px rgba(var(--rgb-forest), 0.10);
+  }
+
+
+  /* -------------------------------------------------------
+     ACCESSIBILITY
+     ------------------------------------------------------- */
+
+  #reviews .proof-card .btn-si:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 3px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  #reviews .proof-grid {
+    gap: 0.4rem;
+  }
+
+
+  #reviews .proof-icon-wrap {
+    width: 44px;
+    height: 44px;
+
+    margin-bottom: 0.55rem;
+  }
+
+
+  #reviews .proof-icon-wrap .icon {
+    width: 18px;
+    height: 18px;
+  }
+
+
+  #reviews .proof-card h3 {
+    font-size: 0.68rem;
+  }
+
+}
+
+
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.si-footer {
+  background-color: var(--color-forest);
+  color: rgba(247, 243, 234, 0.8);
+  padding-top: 0;
+}
+
+.si-footer__grid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.8fr 1fr 1fr;
+  gap: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid rgba(247, 243, 234, 0.12);
+}
+
+.si-footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: var(--space-sm);
+}
+
+.si-footer__brand img {
+  height: 42px;
+  width: auto;
+}
+
+.si-footer__brand span {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-warm-white);
+}
+
+.si-footer p {
+  color: rgba(247, 243, 234, 0.7);
+  font-size: 1.02rem;
+}
+
+.si-footer__tagline {
+  margin-top: var(--space-sm);
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--color-soft-gold);
+  font-size: 1.18rem;
+}
+
+.si-footer__social {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: var(--space-md);
+}
+
+.si-footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(247, 243, 234, 0.2);
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.si-footer__social a svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-warm-white);
+}
+
+.si-footer__social a:hover {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  transform: translateY(-3px);
+}
+
+.si-footer h4 {
+  color: var(--color-warm-white);
+  font-size: 1.1rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-md);
+}
+
+.si-footer__links {
+  display: grid;
+  gap: 0.8rem;
+  font-size: 1.02rem;
+}
+
+.si-footer__links a:hover {
+  color: var(--color-soft-gold);
+}
+
+.si-footer__contact {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.si-footer__contact li {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  font-size: 1.02rem;
+}
+
+.si-footer__contact li svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-soft-gold);
+  flex-shrink: 0;
+  margin-top: 0.2em;
+}
+
+.si-footer__contact a:hover {
+  color: var(--color-soft-gold);
+}
+
+.si-footer__hours-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 1rem;
+  padding-block: 0.4rem;
+}
+
+.si-footer__hours-row span:first-child {
+  color: rgba(247, 243, 243, 0.6);
+}
+
+.si-footer__hours-row span:last-child {
+  color: var(--color-warm-white);
+  font-weight: 600;
+}
+
+.si-footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-block: var(--space-md);
+  font-size: 0.9rem;
+  color: rgba(247, 243, 243, 0.55);
+}
+
+/* =========================================================
+   FOOTER — TABLET (≤ 900px)
+   ========================================================= */
+@media (max-width: 900px) {
+  .si-footer__grid {
+    grid-template-columns: 1fr 1fr;
+    row-gap: var(--space-xl);
+  }
+
+  .si-footer__grid > div:first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   FOOTER — MOBILE (≤ 575px)
+   ========================================================= */
+@media (max-width: 575px) {
+  .si-footer {
+    padding-top: 0;
+    text-align: center;
+  }
+
+  .si-footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .si-footer__grid > div:first-child {
+    grid-column: 1;
+  }
+
+  .si-footer__brand {
+    justify-content: center;
+  }
+
+  .si-footer__social {
+    justify-content: center;
+    gap: 0.9rem;
+  }
+
+  /* Explore links laid out horizontally instead of stacked */
+  .si-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem 1.1rem;
+  }
+
+  .si-footer__contact {
+    justify-items: center;
+  }
+
+  .si-footer__contact li {
+    align-items: center;
+    text-align: center;
+  }
+
+  .si-footer__contact li:first-child {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .si-footer__hours-row {
+    justify-content: center;
+    gap: 0.5rem;
+    padding-block: 0;
+    margin-bottom: 0;
+  }
+
+  /* Kill the leftover space below the hours row before the divider */
+  .si-footer__grid > div:last-child {
+    margin-bottom: calc(var(--space-lg) * -1);
+  }
+
+  .si-footer__bottom {
+    flex-direction: column;
+    gap: 0.4rem;
+    text-align: center;
+  }
+}
+
+/* =========================================================
+   FLOATING WHATSAPP BUTTON
+   ========================================================= */
+
+.si-whatsapp-float {
+  position: fixed;
+
+  right: var(--space-md);
+
+  bottom: var(--space-md);
+
+  z-index: 800;
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 50%;
+
+  background-color: #25D366;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: var(--shadow-lg);
+
+  transition: transform var(--transition-fast);
+}
+
+
+.si-whatsapp-float:hover {
+  transform: scale(1.08);
+}
+
+
+.si-whatsapp-float svg {
+  width: 30px;
+  height: 30px;
+
+  color: var(--color-white);
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET / SMALL DESKTOP
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+  .si-quickinfo .container {
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 1rem;
+  }
+
+
+  .si-quickinfo__item:nth-child(3) {
+    border-left: none;
+  }
+
+
+  .si-about .container,
+  .si-doctor .container {
+    grid-template-columns: 1fr;
+  }
+
+
+  .si-doctor__visual {
+    max-width: 420px;
+
+    margin-inline: auto;
+  }
+
+
+  .si-footer__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 575px) {
+
+  .si-reviews.section {
+    padding-top: 1.25rem !important;
+  }
+
+
+  .si-about__img-sub {
+    width: 52%;
+
+    right: -6%;
+
+    bottom: -8%;
+  }
+
+
+  .si-footer__grid {
+    grid-template-columns: 1fr;
+
+    gap: var(--space-lg);
+  }
+
+
+  .si-footer__bottom {
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+}
